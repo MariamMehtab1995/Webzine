@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<body style="background-color: lightgreen;">
 <html lang="en">
 <head>
-    <title>TheEndgame - Origins</title>
+  <meta charset="UTF-8" />
+  <title>TheEndgame - Origins</title>
+  <style>
+    body {
+      background-color: lightgreen;
+      color: black; /* or white if you prefer */
+    }
+    #board1 {
+      width: 400px;
+      margin-top: 20px;
+    }
+  </style>
+
+  <!-- Chessboard.js CSS (include from CDN or your local file) -->
+  <link rel="stylesheet" href="https://unpkg.com/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" />
 </head>
 <body>
-    <h1>The Legendary Origins of Chess</h1>
-    <p>Chess was invented in ancient India, around the 6th century.</p>
-    <p>The early game was called <em>Chaturanga</em>, meaning "four limbs" of an army:</p>
-    <ul>
-        <li>Infantry (Pawn)</li>
-        <li>Cavalry (Knight)</li>
-        <li>Elephants (Bishop)</li>
-        <li>Chariots (Rook)</li>
-    </ul>
-    <p>From India, it spread to Persia, where it became known as <b>Shatranj</b>. The words <i>“Check”</i> and <i>“Checkmate”</i> come from Persian phrases <em>Shah</em> (king) and <em>Shah Mat</em> (king defeated).</p>
-    <p>By the 15th century, chess rules evolved into the modern game during its journey to Europe.</p>
-    <p><a href="Page02.html">Go to Page 2 - The Power of Chess Tactics</a></p>
+  <h1>The Legendary Origins of Chess</h1>
+  <p>Chess was invented in ancient India, around the 6th century.</p>
+  <p>The early game was called <em>Chaturanga</em>, meaning "four limbs" of an army:</p>
+  <ul>
+    <li>Infantry (Pawn)</li>
+    <li>Cavalry (Knight)</li>
+    <li>Elephants (Bishop)</li>
+    <li>Chariots (Rook)</li>
+  </ul>
+  <p>From India, it spread to Persia, where it became known as <b>Shatranj</b>. The words <i>“Check”</i> and <i>“Checkmate”</i> come from Persian phrases <em>Shah</em> (king) and <em>Shah Mat</em> (king defeated).</p>
+  <p>By the 15th century, chess rules evolved into the modern game during its journey to Europe.</p>
+  <p><a href="Page02.html">Go to Page 2 - The Power of Chess Tactics</a></p>
 
-    <div id="board1" style="width: 400px"></div>
-    var board1 = Chessboard('board1', 'start')
-    
+  <!-- Chessboard container -->
+  <div id="board1"></div>
+
+  <!-- Load jQuery (required for Chessboard.js) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Load Chessboard.js -->
+  <script src="https://unpkg.com/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+
+  <script>
+    // Initialize Chessboard.js on the 'board1' div with starting position
+    var board1 = Chessboard('board1', 'start');
+  </script>
 </body>
 </html>
