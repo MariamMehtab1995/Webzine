@@ -3,18 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <title>TheEndgame - Origins</title>
-
-                               
   <link rel="stylesheet" href="https://unpkg.com/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" />
+  <style>
+    body {
+      background: #faf8f5;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    h1 {
+      font-size: 3em;          /* Large heading */
+      text-align: center;      /* Centered horizontally */
+      margin-top: 40px;        /* Space above the heading */
+      margin-bottom: 30px;     /* Space below the heading */
+      color: #3d2c1e;          /* Optional: attractive heading color */
+    }
+    #board1 {
+      width: 400px;
+      margin: 30px auto;       /* Centers chessboard block horizontally */
+      display: block;
+    }
+    p, ul {
+      max-width: 640px;
+      margin: 0 auto 20px auto;
+      font-size: 1.13em;
+      line-height: 1.5;
+    }
+    ul {
+      padding-left: 40px;
+    }
+    a {
+      display: block;
+      text-align: center;
+      margin: 30px auto;
+      font-weight: bold;
+      text-decoration: none;
+      color: #3448c5;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <h1>The Legendary Origins of Chess</h1>
-   <style>
-    h1 {
-      font-size: 3em;
-      text-align: center;
-      margin-top: 40px;
-    }
   <p>Chess was invented in ancient India, around the 6th century.</p>
   <p>The early game was called <em>Chaturanga</em>, meaning "four limbs" of an army:</p>
   <ul>
@@ -23,21 +55,17 @@
     <li>Elephants (Bishop)</li>
     <li>Chariots (Rook)</li>
   </ul>
-  <p>From India, it spread to Persia, where it became known as <b>Shatranj</b>. The words <i>“Check”</i> and <i>“Checkmate”</i> come from Persian phrases <em>Shah</em> (king) and <em>Shah Mat</em> (king defeated).</p>
+  <p>From India, it spread to Persia, where it became known as <strong>Shatranj</strong>. The words <em>“Check”</em> and <em>“Checkmate”</em> come from Persian phrases <em>Shah</em> (king) and <em>Shah Mat</em> (king defeated).</p>
   <p>By the 15th century, chess rules evolved into the modern game during its journey to Europe.</p>
-  <p><a href="Page02.html">Go to Page 2 - The Power of Chess Tactics</a></p>
-
-  <!-- Chessboard container -->
+  <a href="Page02.html">Go to Page 2 - The Power of Chess Tactics</a>
   <div id="board1"></div>
-
-  <!-- Load jQuery (required for Chessboard.js) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Load Chessboard.js -->
   <script src="https://unpkg.com/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
-
   <script>
-    // Initialize Chessboard.js on the 'board1' div with starting position
-    var board1 = Chessboard('board1', 'start');
+    var board1 = Chessboard('board1', {
+      position: 'start',
+      draggable: true  // Allows users to move pieces interactively
+    });
   </script>
 </body>
 </html>
