@@ -86,35 +86,44 @@
   </span>
 </div>
   
-<!-- Animated chess pieces with separate witty lines -->
+<!-- Animated chess pieces row -->
 <div id="chess-pieces-row" style="text-align: center; margin: 48px 0;">
   <div class="chess-pieces-flex" style="display: inline-flex; gap: 40px; justify-content: center; align-items: end;">
-    <img src="images/kingpng.png"   alt="King"   class="chess-piece-img" data-witty="King: Worth the game, moves one square at a time."   style="width: 100px;">
-    <img src="images/queenpng.png"  alt="Queen"  class="chess-piece-img" data-witty="Queen: Worth 9 points, can move any number of squares in any direction." style="width: 120px;">
-    <img src="images/rookpng.png"   alt="Rook"   class="chess-piece-img" data-witty="Rook: Straight shooter and castle protector, moves in straight lines." style="width: 110px;">
-    <img src="images/bishoppng.png" alt="Bishop" class="chess-piece-img" data-witty="Bishop: Diagonal master, cutting through clutter with grace." style="width: 100px;">
-    <img src="images/knightpng.png" alt="Knight" class="chess-piece-img" data-witty="Knight: The chess ninja, leaps over others in an 'L' shape." style="width: 100px;">
-    <img src="images/pawnpng.png"   alt="Pawn"   class="chess-piece-img" data-witty="Pawn: The foot soldier that dreams big—can promote to queen." style="width: 90px;">
+    <img src="images/kingpng.png"   alt="King"   class="chess-piece-img"   data-witty="King: The ruler of the board. Moves one square at a time — slow and steady wins the throne."   style="width: 130px;">
+    <img src="images/queenpng.png"  alt="Queen"  class="chess-piece-img"   data-witty="Queen: The powerhouse — moves any number of squares in any direction. Basically, the boss’s boss." style="width: 130px;">
+    <img src="images/rookpng.png"   alt="Rook"   class="chess-piece-img"   data-witty="Rook: Straight shooter along ranks and files. Think of it as the castle’s express elevator." style="width: 130px;">
+    <img src="images/bishoppng.png" alt="Bishop" class="chess-piece-img"   data-witty="Bishop: Moves diagonally like it’s cutting through the crowd stealthily. Sometimes sneaky, always sharp." style="width: 130px;">
+    <img src="images/knightpng.png" alt="Knight" class="chess-piece-img"   data-witty="Knight: The wild card — jumps in an L-shape over others. The chessboard’s ninja." style="width: 130px;">
+    <img src="images/pawnpng.png"   alt="Pawn"   class="chess-piece-img"   data-witty="Pawn: The foot soldier with limited moves, but hey, they can transform into any piece — never underestimate the little guys." style="width: 130px;">
   </div>
   <p id="witty-line" style="
-    font-style: italic; color: #555; margin-top: 20px; font-size: 1.13em; max-width: 800px;
-    margin-left: auto; margin-right: auto; min-height: 1.3em;
-    ">
-    Hover over a piece to see its witty description.
+    font-family: monospace;
+    font-style: normal;
+    color: #444;
+    margin-top: 20px;
+    font-size: 1.13em;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 1.3em;  /* reserve space to avoid jumping */
+    white-space: pre-wrap;  /* keep spaces and wrap lines */
+    letter-spacing: 1px;
+  ">
+  Hover over a piece to see its witty description.
   </p>
 </div>
 
 <style>
 .chess-piece-img {
-  transition: transform 0.33s cubic-bezier(.5,1.8,.3,1), filter 0.25s;
+  transition: transform 0.35s ease, filter 0.25s;
   cursor: pointer;
   filter: drop-shadow(0 6px 6px rgba(0,0,0,0.18));
 }
 /* On hover: float higher and grow */
 .chess-piece-img:hover {
   z-index: 2;
-  transform: translateY(-30px) scale(1.15);
-  filter: drop-shadow(0 12px 12px rgba(0,0,0,0.3));
+  transform: translateY(-30px) scale(1.12);
+  filter: drop-shadow(0 14px 14px rgba(0,0,0,0.35));
 }
 
 /* Fade other pieces during hover for clarity */
@@ -126,15 +135,33 @@
 </style>
 
 <script>
-const pieces = document.querySelectorAll(".chess-piece-img");
-const wittyLine = document.getElementById("witty-line");
+// Simple fast typewriter effect for witty line on hover
+const wittyLine = document.getElementById('witty-line');
 
+function typewriterEffect(text, speed=40) {
+  wittyLine.textContent = "";
+  let index = 0;
+  let interval = setInterval(() => {
+    if (index < text.length) {
+      wittyLine.textContent += text.charAt(index);
+      index++;
+    } else {
+      clearInterval(interval);
+    }
+  }, speed);
+  return interval;
+}
+
+let typingInterval = null;
+const pieces = document.querySelectorAll('.chess-piece-img');
 pieces.forEach(piece => {
-  piece.addEventListener('mouseover', () => {
-    wittyLine.textContent = piece.getAttribute('data-witty');
+  piece.addEventListener('mouseenter', () => {
+    if (typingInterval) clearInterval(typingInterval);
+    typewriterEffect(piece.getAttribute('data-witty'));
   });
-  piece.addEventListener('mouseout', () => {
-    wittyLine.textContent = "Hover over a piece to see its witty description.";
+  piece.addEventListener('mouseleave', () => {
+    if (typingInterval) clearInterval(typingInterval);
+    wittyLine.textContent = 'Hover over a piece to see its witty description.';
   });
 });
 </script>
