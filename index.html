@@ -86,53 +86,57 @@
   </span>
 </div>
   
-<!-- Animated chess pieces row with interactive hover -->
+<!-- Animated chess pieces with separate witty lines -->
 <div id="chess-pieces-row" style="text-align: center; margin: 48px 0;">
-  <div class="chess-pieces-flex" style="display: inline-flex; gap: 48px; justify-content: center; align-items: end;">
-    <img src="images/kingpng.png"   alt="King"   class="chess-piece-img"   style="width: 120px;">
-    <img src="images/queenpng.png"  alt="Queen"  class="chess-piece-img"   style="width: 120px;">
-    <img src="images/rookpng.png"   alt="Rook"   class="chess-piece-img"   style="width: 120px;">
-    <img src="images/bishoppng.png" alt="Bishop" class="chess-piece-img"   style="width: 120px;">
-    <img src="images/knightpng.png" alt="Knight" class="chess-piece-img"   style="width: 120px;">
-    <img src="images/pawnpng.png"   alt="Pawn"   class="chess-piece-img"   style="width: 120px;">
+  <div class="chess-pieces-flex" style="display: inline-flex; gap: 40px; justify-content: center; align-items: end;">
+    <img src="images/kingpng.png"   alt="King"   class="chess-piece-img" data-witty="King: Worth the game, moves one square at a time."   style="width: 100px;">
+    <img src="images/queenpng.png"  alt="Queen"  class="chess-piece-img" data-witty="Queen: Worth 9 points, can move any number of squares in any direction." style="width: 120px;">
+    <img src="images/rookpng.png"   alt="Rook"   class="chess-piece-img" data-witty="Rook: Straight shooter and castle protector, moves in straight lines." style="width: 110px;">
+    <img src="images/bishoppng.png" alt="Bishop" class="chess-piece-img" data-witty="Bishop: Diagonal master, cutting through clutter with grace." style="width: 100px;">
+    <img src="images/knightpng.png" alt="Knight" class="chess-piece-img" data-witty="Knight: The chess ninja, leaps over others in an 'L' shape." style="width: 100px;">
+    <img src="images/pawnpng.png"   alt="Pawn"   class="chess-piece-img" data-witty="Pawn: The foot soldier that dreams big—can promote to queen." style="width: 90px;">
   </div>
   <p id="witty-line" style="
     font-style: italic; color: #555; margin-top: 20px; font-size: 1.13em; max-width: 800px;
-    margin-left: auto; margin-right: auto; opacity: 0; transition: opacity 0.3s;">
-    Where pawns dream of queens, knights leap to glory, and kings hope it’s just a phase.
+    margin-left: auto; margin-right: auto; min-height: 1.3em;
+    ">
+    Hover over a piece to see its witty description.
   </p>
 </div>
 
 <style>
-@keyframes float {
-  0%, 100% { transform: translateY(0);}
-  50%      { transform: translateY(-22px);}
-}
 .chess-piece-img {
-  transition: transform 0.33s cubic-bezier(.5,1.8,.3,1), filter 0.25s, opacity 0.3s;
-  animation: float 2.7s ease-in-out infinite;
+  transition: transform 0.33s cubic-bezier(.5,1.8,.3,1), filter 0.25s;
   cursor: pointer;
+  filter: drop-shadow(0 6px 6px rgba(0,0,0,0.18));
 }
-/* On hover: float higher, all others fade, show line */
+/* On hover: float higher and grow */
 .chess-piece-img:hover {
   z-index: 2;
-  transform: translateY(-38px) scale(1.08); /* float higher and a bit bigger */
-  filter: drop-shadow(0 16px 22px rgba(0,0,0,0.12));
+  transform: translateY(-30px) scale(1.15);
+  filter: drop-shadow(0 12px 12px rgba(0,0,0,0.3));
 }
 
-.chess-piece-img:hover ~ .chess-piece-img,
-.chess-piece-img:active ~ .chess-piece-img {
-  opacity: 0.45;
-}
+/* Fade other pieces during hover for clarity */
 .chess-pieces-flex:hover .chess-piece-img:not(:hover) {
-  opacity: 0.35;
+  opacity: 0.45;
+  filter: none;
+  transform: scale(1);
 }
 </style>
+
 <script>
-const pieceRow = document.querySelector(".chess-pieces-flex");
+const pieces = document.querySelectorAll(".chess-piece-img");
 const wittyLine = document.getElementById("witty-line");
-pieceRow.addEventListener('mouseover', () => wittyLine.style.opacity = '1');
-pieceRow.addEventListener('mouseout',  () => wittyLine.style.opacity = '0');
+
+pieces.forEach(piece => {
+  piece.addEventListener('mouseover', () => {
+    wittyLine.textContent = piece.getAttribute('data-witty');
+  });
+  piece.addEventListener('mouseout', () => {
+    wittyLine.textContent = "Hover over a piece to see its witty description.";
+  });
+});
 </script>
 
   <!-- Chessboard container -->
