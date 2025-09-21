@@ -86,12 +86,27 @@
   </span>
 </div>
   
-  <ul style="max-width: 400px; margin: 0 auto 30px auto; font-size: 1.1em; list-style-type: square; color: #555;">
-    <li><b>Infantry (Pawn)</b></li>
-    <li><b>Cavalry (Knight)</b></li>
-    <li><b>Elephants (Bishop)</b></li>
-    <li><b>Chariots (Rook)</b></li>
-  </ul>
+<!-- Animated chess pieces row -->
+<div style="text-align: center; margin: 40px 0;">
+  <div style="display: inline-flex; gap: 24px; justify-content: center; align-items: end;">
+    <img src="images/kingpng.png" alt="King" style="width: 60px; animation: float 2.7s ease-in-out infinite;">
+    <img src="images/queenpng.png" alt="Queen" style="width: 60px; animation: float 2.7s 0.2s ease-in-out infinite;">
+    <img src="images/rookpng.png" alt="Rook" style="width: 60px; animation: float 2.7s 0.4s ease-in-out infinite;">
+    <img src="images/bishoppng.png" alt="Bishop" style="width: 60px; animation: float 2.7s 0.6s ease-in-out infinite;">
+    <img src="images/knightpng.png" alt="Knight" style="width: 60px; animation: float 2.7s 0.8s ease-in-out infinite;">
+    <img src="images/pawnpng.png" alt="Pawn" style="width: 60px; animation: float 2.7s 1s ease-in-out infinite;">
+  </div>
+  <p style="font-style: italic; color: #555; margin-top: 16px; font-size: 1em; max-width: 600px; margin-left: auto; margin-right: auto;">
+    Where pawns dream of queens, knights leap to glory, and kings hope it’s just a phase.
+  </p>
+</div>
+
+<style>
+@keyframes float {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-16px);}
+}
+</style>
   
   <p style="max-width: 700px; margin: auto 0 15px 0; font-size: 1.1em;">
     From India, the game migrated to Persia, where it became known as <strong>Shatranj</strong>. The English terms <i>“Check”</i> and <i>“Checkmate”</i> are derived from Persian phrases: <em>Shah</em> (meaning “king”) and <em>Shah Mat</em> (meaning “the king is defeated”).
