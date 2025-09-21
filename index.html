@@ -54,14 +54,18 @@
 </div>
   
 <div style="
-  width: 100vw;
-  background: #000;
+  position: relative;
+  left: 0;
+  width: 100vw;  /* full viewport width */
+  background: rgba(0, 0, 0, 0.75);  /* transparent black */
   color: #fff;
   text-align: center;
   padding: 16px 0 9px 0;
   font-family: 'Georgia', serif;
-  margin-bottom: 0;
-  margin-top: -4px;
+  margin: 0;  /* remove default margin */
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 100;
 ">
   <span style="
     font-size: 1.25em;
