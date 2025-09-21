@@ -86,17 +86,19 @@
   </span>
 </div>
   
-<!-- Animated chess pieces row -->
-<div style="text-align: center; margin: 40px 0;">
-  <div style="display: inline-flex; gap: 24px; justify-content: center; align-items: end;">
-    <img src="images/kingpng.png" alt="King" style="width: 60px; animation: float 2.7s ease-in-out infinite;">
-    <img src="images/queenpng.png" alt="Queen" style="width: 60px; animation: float 2.7s 0.2s ease-in-out infinite;">
-    <img src="images/rookpng.png" alt="Rook" style="width: 60px; animation: float 2.7s 0.4s ease-in-out infinite;">
-    <img src="images/bishoppng.png" alt="Bishop" style="width: 60px; animation: float 2.7s 0.6s ease-in-out infinite;">
-    <img src="images/knightpng.png" alt="Knight" style="width: 60px; animation: float 2.7s 0.8s ease-in-out infinite;">
-    <img src="images/pawnpng.png" alt="Pawn" style="width: 60px; animation: float 2.7s 1s ease-in-out infinite;">
+<!-- Animated chess pieces row with interactive hover -->
+<div id="chess-pieces-row" style="text-align: center; margin: 48px 0;">
+  <div class="chess-pieces-flex" style="display: inline-flex; gap: 48px; justify-content: center; align-items: end;">
+    <img src="images/kingpng.png"   alt="King"   class="chess-piece-img"   style="width: 120px;">
+    <img src="images/queenpng.png"  alt="Queen"  class="chess-piece-img"   style="width: 120px;">
+    <img src="images/rookpng.png"   alt="Rook"   class="chess-piece-img"   style="width: 120px;">
+    <img src="images/bishoppng.png" alt="Bishop" class="chess-piece-img"   style="width: 120px;">
+    <img src="images/knightpng.png" alt="Knight" class="chess-piece-img"   style="width: 120px;">
+    <img src="images/pawnpng.png"   alt="Pawn"   class="chess-piece-img"   style="width: 120px;">
   </div>
-  <p style="font-style: italic; color: #555; margin-top: 16px; font-size: 1em; max-width: 600px; margin-left: auto; margin-right: auto;">
+  <p id="witty-line" style="
+    font-style: italic; color: #555; margin-top: 20px; font-size: 1.13em; max-width: 800px;
+    margin-left: auto; margin-right: auto; opacity: 0; transition: opacity 0.3s;">
     Where pawns dream of queens, knights leap to glory, and kings hope it’s just a phase.
   </p>
 </div>
@@ -104,23 +106,34 @@
 <style>
 @keyframes float {
   0%, 100% { transform: translateY(0);}
-  50% { transform: translateY(-16px);}
+  50%      { transform: translateY(-22px);}
+}
+.chess-piece-img {
+  transition: transform 0.33s cubic-bezier(.5,1.8,.3,1), filter 0.25s, opacity 0.3s;
+  animation: float 2.7s ease-in-out infinite;
+  cursor: pointer;
+}
+/* On hover: float higher, all others fade, show line */
+.chess-piece-img:hover {
+  z-index: 2;
+  transform: translateY(-38px) scale(1.08); /* float higher and a bit bigger */
+  filter: drop-shadow(0 16px 22px rgba(0,0,0,0.12));
+}
+
+.chess-piece-img:hover ~ .chess-piece-img,
+.chess-piece-img:active ~ .chess-piece-img {
+  opacity: 0.45;
+}
+.chess-pieces-flex:hover .chess-piece-img:not(:hover) {
+  opacity: 0.35;
 }
 </style>
-  
-  <p style="max-width: 700px; margin: auto 0 15px 0; font-size: 1.1em;">
-    From India, the game migrated to Persia, where it became known as <strong>Shatranj</strong>. The English terms <i>“Check”</i> and <i>“Checkmate”</i> are derived from Persian phrases: <em>Shah</em> (meaning “king”) and <em>Shah Mat</em> (meaning “the king is defeated”).
-  </p>
-  
-  <p style="max-width: 700px; margin: auto 0 40px 0; font-size: 1.1em;">
-    By the 15th century, chess rules had evolved closer to the modern game as it spread through Europe, capturing minds and cultures worldwide.
-  </p>
-
-  <p style="text-align:center; font-size: 1.2em;">
-    <a href="Page02.html" style="color: #4a7c24; font-weight: bold; text-decoration: none; text-shadow: 1px 1px 0 #bfd1a7;">
-      Go to Page 2 - The Power of Chess Tactics
-    </a>
-  </p>
+<script>
+const pieceRow = document.querySelector(".chess-pieces-flex");
+const wittyLine = document.getElementById("witty-line");
+pieceRow.addEventListener('mouseover', () => wittyLine.style.opacity = '1');
+pieceRow.addEventListener('mouseout',  () => wittyLine.style.opacity = '0');
+</script>
 
   <!-- Chessboard container -->
   <div id="board1" style="width: 400px; margin: 30px auto;"></div>
