@@ -42,14 +42,35 @@
       color: rgba(255, 255, 255, 0.8); /* light white */
     }
 
-    .top-box {
-      height: 45vh; /* 45% of viewport height */
-      background: linear-gradient(to right, black, #2e1807);
-      color: white;
-      display: flex;
-      align-items: center;
-      padding-left: 40px;
-      box-sizing: border-box;
+   .top-box {
+  display: flex;
+  align-items: center;
+  height: 45vh;
+  background-color: #000000; /* or your gradient background */
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+
+.knight-img {
+  height: 60%;  /* adjust size */
+  transition: filter 0.5s ease;
+  cursor: pointer;
+}
+
+.knight-img:hover {
+  filter: drop-shadow(0 0 15px #ff0000);
+}
+
+.second-img {
+  height: 60%;  /* match size */
+  margin-left: 30px;  /* space between images */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.second-img:hover {
+  transform: scale(1.1);
+}
     }
 
     .knight-img {
@@ -97,7 +118,7 @@
   <!-- Knight section -->
   <div class="top-box">
     <img src="images/knightmainnobg.png" alt="Chess Knight" class="knight-img" />
-     <img src="images/whiteknight.webp" alt="Chess Knight" class="knight-img" />
+     <img src="images/white-knight.webp" alt="White Knight" class="second-img" />
   </div>
 
   King picture and text
