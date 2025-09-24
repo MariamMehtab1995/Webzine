@@ -2,6 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Chess Knight Hover Shadow</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0; /* Light background below the top box */
+    }
+    .top-box {
+      height: 30vh; /* 30% of viewport height */
+      background-color: #424242; /* Dark gray background */
+      display: flex;
+      align-items: center;
+      padding-left: 40px;
+      box-sizing: border-box;
+    }
+    .knight-img {
+      height: 80%;
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .knight-img:hover {
+      filter: drop-shadow(0 0 15px #00bfff); /* Blue glowing shadow */
+    }
+  </style>
+</head>
+<body>
+  <div class="top-box">
+    <img src="images/knightmainnobg.jpg" alt="Chess Knight" class="knight-img" />
+  </div>
+
+  
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <title>TheEndgame - Origins</title>
 </head>
 <body style="background-color:#f0f0e8; color:#333; font-family: 'Georgia', serif; line-height:1.6; margin: 0;">
