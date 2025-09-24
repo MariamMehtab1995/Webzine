@@ -17,10 +17,9 @@
       background-color: #424242; /* Same dark gray background as knight */
       color: white;
       display: flex;
-      justify-content: center;
+      justify-content: left;
       gap: 40px;
-      padding: 12px 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      padding: 12px 20px;
       user-select: none;
       position: sticky;
       top: 0;
@@ -30,7 +29,7 @@
     /* Each heading */
     .header-container h2 {
       margin: 0;
-      font-weight: normal;
+      font-weight: bold;
       font-size: 1.4em;
       cursor: pointer;
       transition: transform 0.3s ease, color 0.3s ease;
@@ -53,8 +52,8 @@
     }
 
     .knight-img {
-      height: 60%;
-      transition: filter 0.3s ease;
+      height: 80%;
+      transition: filter 0.5s ease;
       cursor: pointer;
     }
 
@@ -88,15 +87,15 @@
   <!-- Header section with headings -->
   <div class="header-container">
     <h2>Home</h2>
-    <h2>Strategy</h2>
-    <h2>History</h2>
-    <h2>Culture</h2>
-    <h2>Games</h2>
+    <h2>Play Now</h2>
+    <h2>Learn</h2>
+    <h2>Legendary Games</h2>
+    <h2>Blogs</h2>
   </div>
 
   <!-- Knight section -->
   <div class="top-box">
-    <img src="images/knightmainnobg.png" alt="Chess Knight" class="knight-img" />
+    <img src="images/knightmainnobg.png"/>
   </div>
 
   <!-- Existing content restored below -->
@@ -170,7 +169,7 @@
       display: block;
       margin-bottom: 5px;
     ">
-      Meet the Royals and Rebels of the Chessboard:
+      Learn: The pieces
     </span>
     <span style="
       font-size: 0.95em;
@@ -205,7 +204,6 @@
       white-space: pre-wrap;  /* keep spaces and wrap lines */
       letter-spacing: 1px;
     ">
-    Hover over a piece to see its witty description.
     </p>
   </div>
 
