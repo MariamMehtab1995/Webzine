@@ -2,6 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Chess Knight Hover Shadow</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0; /* Light background below the top box */
+    }
+    .top-box {
+      height: 30vh; /* 30% of viewport height */
+      background-color: #424242; /* Dark gray background */
+      display: flex;
+      align-items: center;
+      padding-left: 40px;
+      box-sizing: border-box;
+      gap: 30px; /* spacing between image and heading */
+      color: white; /* white text for all inside */
+    }
+    .knight-img {
+      height: 80%;
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .knight-img:hover {
+      filter: drop-shadow(0 0 15px #00bfff); /* Blue glowing shadow */
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+      /* background is transparent by default */
+    }
+  </style>
+</head>
+<body>
+  <div class="top-box">
+    <img src="images/knightmainnobg.jpg" alt="Chess Knight" class="knight-img" />
+    <h1>Chess Knight</h1>
+  </div>
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body, html {
