@@ -14,22 +14,22 @@
 
     /* Heading container at top */
     .header-container {
-      background-color: #424242; /* Same dark gray background as knight */
-      color: white;
+      background-color: black; /* Black behind the buttons */
+      color: white; 
       display: flex;
-      justify-content: left;
-      gap: 40px;
+      justify-content: right;
+      gap: 60px;
       padding: 12px 20px;
       user-select: none;
       position: sticky;
-      top: 0;
+      top: 12px;
       z-index: 100;
     }
 
     /* Each heading */
     .header-container h2 {
       margin: 0;
-      font-weight: bold;
+      font-weight: normal;
       font-size: 1.4em;
       cursor: pointer;
       transition: transform 0.3s ease, color 0.3s ease;
@@ -43,7 +43,7 @@
 
     .top-box {
       height: 45vh; /* 45% of viewport height */
-      background-color: #424242; /* Dark gray background */
+      background-color: #000000; /* black background */
       color: white;
       display: flex;
       align-items: center;
@@ -91,11 +91,16 @@
     <h2>Learn</h2>
     <h2>Legendary Games</h2>
     <h2>Blogs</h2>
+    <h2>Log In</h2>
   </div>
 
   <!-- Knight section -->
   <div class="top-box">
     <img src="images/knightmainnobg.png"/>
+
+    <img src="images/knightmainnobg.png": 
+      filter: drop-shadow(0 0 15px #ff0000); /* red glowing shadow */
+    }
   </div>
 
   <!-- Existing content restored below -->
