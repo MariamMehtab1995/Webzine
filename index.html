@@ -2,6 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+    .container {
+      display: flex;
+      justify-content: flex-end; /* Align items to the right */
+      align-items: flex-start;   /* Align items to the top */
+      flex-direction: row;       /* Horizontal layout */
+      padding: 10px;
+      background-color: #f0f0f0;
+      height: 60px; /* height of header bar */
+    }
+    .item {
+      margin-left: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">Play Now</div>
+    <div class="item">Learn</div>
+    <div class="item">Legendary Games Directory</div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <title>Chess Knight Hover Shadow</title>
   <style>
     body {
