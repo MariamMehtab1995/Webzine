@@ -35,8 +35,6 @@
       transform: translateY(-10px) scale(1.1);
       color: rgba(255, 255, 255, 0.8);
     }
-
-    /* Container for knights and message side by side */
     .top-box {
       display: flex;
       align-items: center;
@@ -44,45 +42,14 @@
       background: linear-gradient(to right, black, #8B4513);
       padding-left: 100px;
       box-sizing: border-box;
-      gap: 40px;
     }
-
-    /* Container around the two knights */
-    .knights-container {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    /* Black Knight image: full height of container */
-    .knight-img {
-      height: 100%;
-      transition: transform 0.2s ease;
+    .knight-img, .second-img {
       cursor: pointer;
-    }
-    .knight-img:hover {
-      transform: scale(1.3);
-    }
-
-    /* White Knight image smaller height */
-    .second-img {
+      transition: transform 0.2s ease;
       height: 60%;
-      cursor: pointer;
-      transition: transform 0.2s ease;
     }
-    .second-img:hover {
+    .knight-img:hover, .second-img:hover {
       transform: scale(1.3);
-    }
-
-    /* Message to right of knights */
-    #knight-hover-message {
-      font-family: monospace;
-      font-size: 1.4em;
-      color: #fff;
-      min-width: 220px;
-      min-height: 2em;
-      user-select: none;
-      white-space: pre-wrap;
     }
 
     /* Chess piece row */
@@ -102,7 +69,7 @@
       transform: scale(1);
     }
 
-    /* King header section */
+    /* King section */
     .king-section {
       width: 100vw;
       min-height: 40vh;
@@ -120,16 +87,13 @@
       margin-top: -10px;
     }
     .king-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.45);
+      position: absolute; 
+      top: 0; left: 0; width: 100%; height: 100%; 
+      background: rgba(0,0,0,0.45); 
       border-radius: 0 0 12px 12px;
     }
     .king-section h1 {
-      font-size: 3.5em;
+      font-size: 3.5em; 
       font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
       color: #fff;
       text-align: center;
@@ -149,7 +113,7 @@
       text-shadow: 1px 1px 5px #000;
     }
 
-    /* Royals / rebels section */
+    /* Royals/Rebels Section */
     .royals-section {
       position: relative;
       left: 50%;
@@ -178,11 +142,21 @@
       display: block;
     }
 
-    /* Responsive chessboard */
+    /* Responsive Chessboard */
     #board1 {
       width: 90vw;
       max-width: 400px;
       margin: 30px auto;
+    }
+
+    /* Hover message styling */
+    #hover-message {
+      color: #ddd;
+      font-family: monospace;
+      font-size: 1.1em;
+      text-align: center;
+      margin-top: 12px;
+      min-height: 1.5em;
     }
   </style>
 </head>
@@ -197,12 +171,10 @@
   </div>
 
   <div class="top-box">
-    <div class="knights-container">
-      <img src="images/knightmainnobg.png" alt="Black Knight" class="knight-img" />
-      <img src="images/white-knight.webp" alt="White Knight" class="second-img" />
-    </div>
-    <p id="knight-hover-message">Hover over a knight to start the game.</p>
+    <img src="images/knightmainnobg.png" alt="Chess Knight" class="knight-img" />
+    <img src="images/white-knight.webp" alt="White Knight" class="second-img" />
   </div>
+  <p id="hover-message">Hover over a knight to start the game.</p>
 
   <div class="king-section">
     <div class="king-overlay"></div>
@@ -242,53 +214,30 @@
   </div>
 
   <script>
-  const messageEl = document.getElementById('knight-hover-message');
-  const blackKnight = document.querySelector('.knight-img');
-  const whiteKnight = document.querySelector('.second-img');
-
-  function typewriter(text, speed = 40) {
-    messageEl.textContent = "";
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < text.length) {
-        messageEl.textContent += text.charAt(i);
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, speed);
-    return interval;
-  }
-
+  const wittyLine = document.getElementById('witty-line');
   let typingInterval = null;
 
-  blackKnight.addEventListener('mouseenter', () => {
-    if (typingInterval) clearInterval(typingInterval);
-    typingInterval = typewriter('Start game as Black');
-  });
-  blackKnight.addEventListener('mouseleave', () => {
-    if (typingInterval) clearInterval(typingInterval);
-    messageEl.textContent = 'Hover over a knight to start the game.';
-  });
+  function typewriterEffect(text, speed=40) {
+    wittyLine.textContent = "";
+    let index = 0;
+    typingInterval = setInterval(() => {
+      if (index < text.length) {
+        wittyLine.textContent += text.charAt(index);
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, speed);
+  }
 
-  whiteKnight.addEventListener('mouseenter', () => {
-    if (typingInterval) clearInterval(typingInterval);
-    typingInterval = typewriter('Start game as White');
-  });
-  whiteKnight.addEventListener('mouseleave', () => {
-    if (typingInterval) clearInterval(typingInterval);
-    messageEl.textContent = 'Hover over a knight to start the game.';
-  });
-
-  // Witty message hover on chess pieces
-  const wittyLine = document.getElementById('witty-line');
   const pieces = document.querySelectorAll('.chess-piece-img');
-
   pieces.forEach(piece => {
     piece.addEventListener('mouseenter', () => {
-      wittyLine.textContent = piece.getAttribute('data-witty');
+      if (typingInterval) clearInterval(typingInterval);
+      typewriterEffect(piece.getAttribute('data-witty'));
     });
     piece.addEventListener('mouseleave', () => {
+      if (typingInterval) clearInterval(typingInterval);
       wittyLine.textContent = 'Hover over a piece to see its witty description.';
     });
   });
@@ -300,6 +249,26 @@
   <script src="https://unpkg.com/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
   <script>
     var board1 = Chessboard('board1', 'start');
+  </script>
+
+  <script>
+  const blackKnight = document.querySelector('.knight-img');
+  const whiteKnight = document.querySelector('.second-img');
+  const message = document.getElementById('hover-message');
+
+  blackKnight.addEventListener('mouseenter', () => {
+    message.textContent = 'Start game as Black';
+  });
+  blackKnight.addEventListener('mouseleave', () => {
+    message.textContent = 'Hover over a knight to start the game.';
+  });
+
+  whiteKnight.addEventListener('mouseenter', () => {
+    message.textContent = 'Start game as White';
+  });
+  whiteKnight.addEventListener('mouseleave', () => {
+    message.textContent = 'Hover over a knight to start the game.';
+  });
   </script>
   
 </body>
