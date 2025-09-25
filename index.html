@@ -10,8 +10,32 @@
       background: #000000; /* Dark background */
       font-family: 'Georgia', serif;
       color: #fff;
+      
+    }
+ .chessboard-popup {
+      position: absolute;
+      top: 100%; /* position below Play Now */
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      background: white;
+      z-index: 100;
+      width: 320px;
+      overflow: hidden;
     }
 
+    .play-now-container:hover .chessboard-popup {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+  
     /* Heading container at top */
     .header-container {
       background-color: #000000; /* Same dark gray background as knight */
@@ -106,44 +130,27 @@
   <!-- Header section with headings -->
   <div class="header-container">
     <h2>Home</h2>
-    <h2>Play Now</h2>
+    <div class="play-now-container" style="position: relative; display: inline-block;">
+  <h2 class="play-now">Play Now</h2>
+  <div class="chessboard-popup">
+    <img src="images/luxchesssetnobg.png" alt="Luxury Chess Set" style="width: 320px; display: block;" />
+  </div>
+</div>
+    
     <h2>Learn</h2>
     <h2>Legendary Games</h2>
     <h2>Blogs</h2>
   </div>
 
-  <div class="play-now-container" style="position: relative; display: inline-block;">
+  <div class="play-now-container" style ="position: relative; display: inline-block;"> 
   <h2 class="play-now">Play Now</h2>
   <div class="slide-up-board">
     <img src="images/luxchesssetnobg.png" alt="Luxury Chess Set" style="width: 320px; height: auto; display: block;" />
   </div>
 </div>
-.slide-up-board {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.4s ease, opacity 0.35s ease;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-  border-radius: 8px;
-  background: transparent; /* transparent since image has no bg */
-  z-index: 100;
-}
 
-.play-now-container:hover .slide-up-board {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
-.play-now-container:hover .slide-up-board {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
   
+
   <!-- Knight section -->
   <div class="top-box">
     <img src="images/knightmainnobg.png" alt="Chess Knight" class="knight-img" />
