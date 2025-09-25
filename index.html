@@ -51,6 +51,10 @@
   box-sizing: border-box;
 }
 
+    <p id="hover-message" style="color: white; text-align: center; font-size: 1.2em; margin-top: 10px;">
+  Hover over a knight to start the game.
+</p>
+    
 .knight-img {
   height: 100%;  /* adjust size */
   transition: transform 0.2s ease;
@@ -290,5 +294,25 @@
     var board1 = Chessboard('board1', 'start');
   </script>
 
+  <script>
+  const blackKnight = document.querySelector('.knight-img');
+  const whiteKnight = document.querySelector('.second-img');
+  const message = document.getElementById('hover-message');
+
+  blackKnight.addEventListener('mouseenter', () => {
+    message.textContent = 'Start game as Black';
+  });
+  blackKnight.addEventListener('mouseleave', () => {
+    message.textContent = 'Hover over a knight to start the game.';
+  });
+
+  whiteKnight.addEventListener('mouseenter', () => {
+    message.textContent = 'Start game as White';
+  });
+  whiteKnight.addEventListener('mouseleave', () => {
+    message.textContent = 'Hover over a knight to start the game.';
+  });
+</script>
+  
 </body>
 </html>
