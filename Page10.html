@@ -1,15 +1,146 @@
-xml
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>TheEndgame - My Chess Story</title>
-</head>
-<body>
-    <h1>My Personal Chess Story</h1>
-    <p>Here’s a photo of an exciting chess game I played with my friend.</p>
-    <p><em>Note:</em> Insert your uploaded game photo here with `<img>` tag.</p>
-    <p>In this game, my final move was a sacrifice that led to checkmate. It taught me the power of thinking ahead and trusting the plan.</p>
-    <p>Chess is not just a game; it’s a journey of patience, creativity, and learning.</p>
-    <p><a href="index.html">Back to Home</a></p>
-</body>
-</html>
+/* Background */
+#zine-bg {
+  position: absolute;
+  width: 1920px;
+  height: 1200px;
+  left: 0px;
+  top: 4px;
+  background: #BA6C6C;
+}
+
+/* Sidebar colored circles */
+.circle {
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  left: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(255,255,255,0.68);
+}
+#c1 { top: 140px; background: #782566; }
+#c2 { top: 250px; background: #DC176C; }
+#c3 { top: 368px; background: #B53211; }
+#c4 { top: 478px; background: #C26700; }
+#c5 { top: 581px; background: #B57A21; }
+#c6 { top: 681px; background: #35582E; }
+#c7 { top: 781px; background: #1D4330; }
+#c8 { top: 881px; background: #392B50; }
+#c9 { top: 981px; background: #5C2A16; }
+#c10 { top: 1081px; background: #5C164E; }
+.circle span {
+  position: absolute;
+  left: 13px;
+  top: 8px;
+}
+
+/* Sidebar numbers */
+.num {
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255,255,255,0.68);
+}
+#n1 { left: 96px; top: 148px; width: 10px;}
+#n2 { left: 96px; top: 258px; width: 13px;}
+#n3 { left: 95px; top: 376px; width: 14px;}
+#n4 { left: 95px; top: 486px; width: 14px;}
+#n5 { left: 95px; top: 589px; width: 13px;}
+#n6 { left: 95px; top: 690px; width: 14px;}
+#n7 { left: 97px; top: 790px; width: 12px;}
+#n8 { left: 94px; top: 890px; width: 14px;}
+#n9 { left: 96px; top: 989px; width: 14px;}
+#n10 { left: 90px; top: 1090px; width: 24px;}
+
+/* Images */
+#meandasma-img {
+  position: absolute;
+  width: 283.64px;
+  height: 564.55px;
+  left: 292px;
+  top: 159.85px;
+  background: url('meandasma.jpg');
+  background-size: cover;
+  transform: rotate(-90.3deg);
+}
+#museum-img {
+  position: absolute;
+  width: 596px;
+  height: 272px;
+  left: 989px;
+  top: 160px;
+  background: url('museuminhyderabad.jpg');
+  background-size: cover;
+}
+#kutextile-img {
+  position: absolute;
+  width: 566px;
+  height: 351px;
+  left: 292px;
+  top: 640px;
+  background: url('kutextileandfashiondesign.jpg');
+  background-size: cover;
+}
+#shops-img {
+  position: absolute;
+  width: 367.12px;
+  height: 849.21px;
+  left: 985.81px;
+  top: 616px;
+  background: url('shops.jpg');
+  background-size: cover;
+  transform: rotate(90.53deg);
+}
+
+/* Image captions */
+.caption {
+  position: absolute;
+  font-family: 'GT Alpina Trial', serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+#caption-meandasma { width: 486px; height: 57px; left: 315px; top: 466px; }
+#caption-museum { width: 486px; height: 57px; left: 1017px; top: 455px; }
+#caption-kutextile { width: 486px; height: 57px; left: 315px; top: 1007px; }
+#caption-shops { width: 486px; height: 57px; left: 1016px; top: 1010px; }
+
+/* Decorative/invisible rectangles for block/hover areas */
+.invisible-rect {
+  position: absolute;
+  width: 86px;
+  height: 92px;
+  background: #D9D9D9;
+  opacity: 0;
+}
+/* Repeat .invisible-rect for each focus area per Figma overlay */
+
+/* Connecting lines for captions */
+.line-v {
+  position: absolute;
+  opacity: 0.5;
+  border: 4px solid rgba(255,255,255,0.27);
+  transform: rotate(90deg);
+}
+#line-2 { width: 931px; left: 101px; top: 170px;}
+
+.line-h {
+  position: absolute;
+  border: 1px solid #B5A0A0;
+}
+#line7-meandasma { width: 492px; left: 292px; top: 521px; }
+#line6-meandasma { width: 55px; left: 292px; top: 466px; transform: rotate(-90deg);}
+#line7-museum { width: 492px; left: 989px; top: 511px;}
+#line6-museum { width: 56.64px; left: 989px; top: 454px; transform: rotate(-90deg);}
+#line7-shops { width: 492px; left: 989px; top: 1060px;}
+#line6-shops { width: 55px; left: 989px; top: 1005px; transform: rotate(-90deg);}
+#line7-kutextile { width: 492px; left: 286px; top: 1060px;}
+#line6-kutextile { width: 55px; left: 286px; top: 1005px; transform: rotate(-90deg);}
