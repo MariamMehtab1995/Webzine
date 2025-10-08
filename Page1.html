@@ -2,134 +2,172 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Pakistani Art Zine</title>
+<meta name="viewport" content="width=1920, initial-scale=1" />
+<title>Zine Layout</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-  @font-face {
-    font-family: 'GT Alpina Trial';
-    src: url('path-to-gt-alpina-trial-font.woff2') format('woff2'); /* replace with real path */
-    font-weight: 500;
-    font-style: normal;
-  }
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.main-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0;
+  background: linear-gradient(90deg, #782566 50%, #2D779B 50%);
+}
+.page-content {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  align-items: stretch;
+}
+.vertical-nav {
+  position: relative;
+  width: 120px;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 70px;
+  z-index: 2;
+  height: 100%;
+}
+.circle {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 26px;
+  position: relative;
+  opacity: 1;
+}
+.circle:nth-child(1) { background: #B53211;}
+.circle:nth-child(2) { background: #DC176C;}
+.circle:nth-child(3) { background: #C26700;}
+.circle:nth-child(4) { background: #B57A21;}
+.circle:nth-child(5) { background: #35582E;}
+.circle:nth-child(6) { background: #1D4330;}
+.circle:nth-child(7) { background: #392B50;}
+.circle:nth-child(8) { background: #5C164E;}
+.circle:nth-child(9) { background: #5C2A16;}
+.circle:nth-child(10) { background: #D9D9D9; color: #333;}
+.circle:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 39px;
+  background: rgba(255,255,255,0.28);
+  z-index: 0;
+}
 
-  /* Reset */
-  * {
-    box-sizing: border-box;
-  }
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Inter', sans-serif;
-    background: #782566;
-    color: white;
-  }
+.zine-main {
+  flex: 1;
+  padding-top: 70px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  z-index: 3;
+}
 
-  .container {
-    display: flex;
-    flex-wrap: nowrap;
-    height: 100vh;
-    max-height: 1200px;
-    max-width: 1920px;
-    margin: 0 auto;
-  }
+.text-blocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.left-text, .right-text {
+  width: 44%;
+  max-width: 680px;
+  color: #fff;
+  font-size: 1.7vw;
+  line-height: 2.1vw;
+  font-family: 'GT Alpina Trial', serif;
+  font-weight: 500;
+  text-shadow: 0px 4px 4px rgba(0,0,0,0.18);
+  margin: 0 30px;
+}
+.right-text {
+  text-align: right;
+}
+.image-block {
+  position: absolute;
+  left: 32vw;
+  top: 36vh;
+  width: 44vw;
+  max-width: 860px;
+  min-width: 260px;
+  z-index: 5;
+}
+.image-block img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-  .left-half {
-    flex: 1 1 50%;
-    background: #782566;
-    padding: 4% 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-  }
-
-  .right-half {
-    flex: 1 1 50%;
-    background: #2D779B;
-    padding: 4% 5%;
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  /* Left top paragraph */
-  .left-text {
-    font-family: 'GT Alpina Trial', serif;
-    font-weight: 500;
-    font-size: clamp(20px, 1.95vw, 30px);
-    line-height: clamp(22px, 2.0vw, 34px);
-    max-width: 75%;
-    color: #FFFFFF;
-    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
-    margin-bottom: 20px;
-  }
-
-  /* Right top paragraph */
-  .right-text {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: clamp(20px, 1.95vw, 30px);
-    line-height: clamp(24px, 2.1vw, 36px);
-    max-width: 75%;
-    color: #FFFFFF;
-    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
-    text-align: center;
-  }
-
-  /* Image of the 3 ladies */
-  .image-three-ladies {
-    position: absolute;
-    width: 45vw;
-    max-width: 865px;
-    height: auto;
-    bottom: 5%;
-    left: 27%;
-    pointer-events: none; /* So it doesn't capture clicks */
-  }
-
-  @media (max-width: 1000px) {
-    .container {
-      flex-direction: column;
-    }
-    .left-half, .right-half {
-      flex: none;
-      width: 100%;
-      height: auto;
-      padding: 20px;
-    }
-    .image-three-ladies {
-      position: relative;
-      width: 100%;
-      left: 0;
-      bottom: 0;
-      margin-top: 20px;
-    }
-    .left-text, .right-text {
-      max-width: 100%;
-      font-size: 18px;
-    }
-    .right-text {
-      text-align: left;
-    }
-  }
+@media (max-width:1100px) {
+  .text-blocks { flex-direction: column; }
+  .left-text, .right-text { width: 92%; font-size: 22px; line-height: 28px; text-align: center; }
+  .image-block { position: static; width: 80vw; margin: 0 auto;}
+  .vertical-nav { width: 70px; min-width: 40px; }
+}
+@media (max-width:900px) {
+  .page-content { flex-direction: column;}
+  .vertical-nav { flex-direction: row; padding-top: 25px; width: 100vw; }
+  .circle { margin-bottom: 0; margin-right: 15px;}
+  .circle:not(:last-child)::after { width: 39px; height: 5px; left: 100%; top: 50%; transform: translateY(-50%);}
+  .zine-main { height: auto; padding-top: 30px;}
+}
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="left-half">
-      <p class="left-text">
-        In Pakistan, the most powerful art isn't hung on walls — it is worn, driven, and sung with a passion that saturates the very air. It’s a culture where creativity is a public spectacle, a personal identity, and a spiritual release, all at once.
-      </p>
-    </div>
-    <div class="right-half">
-      <p class="right-text">
+<div class="main-bg"></div>
+<div class="page-content">
+  <div class="vertical-nav">
+    <div class="circle">1</div>
+    <div class="circle">2</div>
+    <div class="circle">3</div>
+    <div class="circle">4</div>
+    <div class="circle">5</div>
+    <div class="circle">6</div>
+    <div class="circle">7</div>
+    <div class="circle">8</div>
+    <div class="circle">9</div>
+    <div class="circle">10</div>
+  </div>
+  <div class="zine-main">
+    <div class="text-blocks">
+      <div class="left-text">
+        In Pakistan, the most powerful art isn't hung on walls—it is worn, driven, and sung with a passion that saturates the very air. It's a culture where creativity is a public spectacle, a personal identity, and a spiritual release, all at once.
+      </div>
+      <div class="right-text">
         Growing up in South Asia, these pieces of art have been an everyday thing for me, however I wanted to present the colors of Pakistan in this little zine.
-      </p>
-      <img src="images/3ladies-removebg-preview.png" alt="Three women in traditional dress" class="image-three-ladies" />
+      </div>
+    </div>
+    <div class="image-block">
+      <img src="./images/3ladies-removebg-preview.png" alt="Three Ladies">
     </div>
   </div>
+</div>
 </body>
 </html>
