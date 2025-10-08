@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pakistani Art Zine</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+  @font-face {
+    font-family: 'GT Alpina Trial';
+    src: url('path-to-gt-alpina-trial-font.woff2') format('woff2'); /* replace with real path */
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  /* Reset */
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background: #782566;
+    color: white;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    max-height: 1200px;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  .left-half {
+    flex: 1 1 50%;
+    background: #782566;
+    padding: 4% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .right-half {
+    flex: 1 1 50%;
+    background: #2D779B;
+    padding: 4% 5%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /* Left top paragraph */
+  .left-text {
+    font-family: 'GT Alpina Trial', serif;
+    font-weight: 500;
+    font-size: clamp(20px, 1.95vw, 30px);
+    line-height: clamp(22px, 2.0vw, 34px);
+    max-width: 75%;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    margin-bottom: 20px;
+  }
+
+  /* Right top paragraph */
+  .right-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: clamp(20px, 1.95vw, 30px);
+    line-height: clamp(24px, 2.1vw, 36px);
+    max-width: 75%;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    text-align: center;
+  }
+
+  /* Image of the 3 ladies */
+  .image-three-ladies {
+    position: absolute;
+    width: 45vw;
+    max-width: 865px;
+    height: auto;
+    bottom: 5%;
+    left: 27%;
+    pointer-events: none; /* So it doesn't capture clicks */
+  }
+
+  @media (max-width: 1000px) {
+    .container {
+      flex-direction: column;
+    }
+    .left-half, .right-half {
+      flex: none;
+      width: 100%;
+      height: auto;
+      padding: 20px;
+    }
+    .image-three-ladies {
+      position: relative;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      margin-top: 20px;
+    }
+    .left-text, .right-text {
+      max-width: 100%;
+      font-size: 18px;
+    }
+    .right-text {
+      text-align: left;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-half">
+      <p class="left-text">
+        In Pakistan, the most powerful art isn't hung on walls — it is worn, driven, and sung with a passion that saturates the very air. It’s a culture where creativity is a public spectacle, a personal identity, and a spiritual release, all at once.
+      </p>
+    </div>
+    <div class="right-half">
+      <p class="right-text">
+        Growing up in South Asia, these pieces of art have been an everyday thing for me, however I wanted to present the colors of Pakistan in this little zine.
+      </p>
+      <img src="./images/3ladies-removebg-preview.png" alt="Three women in traditional dress" class="image-three-ladies" />
+    </div>
+  </div>
+</body>
+</html>
