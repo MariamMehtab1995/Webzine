@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Modern Embroidery - Page 7</title>
+<title>Pakistani Music Culture - Page 1</title>
 <meta name="viewport" content="width=1920, initial-scale=1" />
 <style>
 body, html {
@@ -11,24 +11,14 @@ body, html {
   width: 100vw;
   height: 100vh;
   min-height: 100vh;
+  box-sizing: border-box;
+  background: #335d31;
   font-family: 'Inter', sans-serif;
-  background: #ba6c71;
 }
-/* Background rectangle */
-.bg-main {
-  position: absolute;
-  top: 7px;
-  left: 0;
-  width: 1920px;
-  height: 1185px;
-  background: #ba6c71;
-  z-index: 0;
-}
-/* Vertical nav bar circles */
 .vertical-nav {
   position: absolute;
   left: 97px;
-  top: 112px;
+  top: 110px;
   width: 120px;
   z-index: 10;
   display: flex;
@@ -43,13 +33,11 @@ body, html {
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  color: #fff;
+  margin-bottom: 56px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  color: #fff;
-  position: relative;
-  margin-bottom: 88px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.10);
-  text-decoration: none;
 }
 .circle.c1 { background: #782566; }
 .circle.c2 { background: #DC176C; }
@@ -68,37 +56,29 @@ body, html {
   top: 100%;
   transform: translateX(-50%);
   width: 5px;
-  height: 88px;
-  background: rgba(255,255,255,0.22);
-  z-index: 0;
+  height: 56px;
+  background: rgba(255,255,255,0.24);
 }
-.circle span { color: rgba(255,255,255,0.75); }
-
 .num {
   position: absolute;
   width: 16px;
   height: 24px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
   font-size: 20px;
   color: rgba(255,255,255,0.68);
 }
-/* Position for each nav number next to circle */
-.num.n1 { left: 110px; top: 120px;}
-.num.n2 { left: 110px; top: 230px;}
-.num.n3 { left: 109px; top: 348px;}
-.num.n4 { left: 109px; top: 454px;}
-.num.n5 { left: 109px; top: 561px;}
-.num.n6 { left: 111px; top: 762px;}
-.num.n7 { left: 104px; top: 1062px; width: 24px;}
-.num.n8 { left: 108px; top: 862px;}
-.num.n9 { left: 110px; top: 961px;}
-.num.n10 { left: 104px; top: 1062px; width: 24px;}
-
+.num.n1 { left: 110px; top: 119px;}
+.num.n2 { left: 110px; top: 219px;}
+.num.n3 { left: 110px; top: 319px;}
+.num.n4 { left: 110px; top: 419px;}
+.num.n5 { left: 110px; top: 519px;}
+.num.n6 { left: 110px; top: 619px;}
+.num.n7 { left: 110px; top: 719px;}
+.num.n8 { left: 110px; top: 819px;}
+.num.n9 { left: 110px; top: 919px;}
+.num.n10 { left: 110px; top: 1019px;}
 .line-2 {
   position: absolute;
-  left: 115px;
-  top: 142px;
+  left: 114px; top: 142px;
   width: 4px;
   height: 931px;
   background: rgba(255,255,255,0.27);
@@ -106,62 +86,36 @@ body, html {
   border-radius: 6px;
   z-index: 3;
 }
-/* Embroidery/zardozi and fashion images - adjust order and src as needed */
-.img-embroidery4 {
+.content-main {
   position: absolute;
-  left: 16px; top: 171px;
-  width: 811px; height: 972px; z-index: 10;
+  left: 230px;
+  top: 55px;
+  width: 1400px;
+  color: #fff;
 }
-.img-embroidery4 img { width:100%; height:100%; object-fit: contain;}
-.img-embroidery {
-  position: absolute;
-  left: 631px; top: 222px;
-  width: 591px; height: 937px; z-index: 12;
+h2 {
+  color: #e4fac7;
+  font-weight: 600;
+  margin-top: 0;
 }
-.img-embroidery img { width:100%; height:100%; object-fit: contain;}
-.img-zardozi {
+a { color: #b7fcc9; text-decoration: underline; }
+.musicimg { width: 210px; position: absolute; left: 1100px; top: 330px;}
+.nfakimg { width: 210px; position: absolute; left: 1420px; top: 260px;}
+.albumimg { width: 180px; position: absolute; left: 1460px; top: 520px;}
+.urduoverlay {
   position: absolute;
-  left: 1343px; top: 193px;
-  width: 643px; height: 964px; z-index: 14;
-}
-.img-zardozi img { width:100%; height:100%; object-fit: contain;}
-.icon-embroidery {
-  position: absolute;
-  left: 60px; top: 640px;
-  width: 103px; height: 70px; z-index: 15;
-}
-.icon-embroidery img { width:100%; height:100%; object-fit: contain; }
-.img-khaadi1 {
-  position: absolute;
-  left: 0; top: 0; /* set left/top if needed */
-  width: 853px; height: 1067px; z-index: 5;
-}
-.img-khaadi1 img { width:100%; height:100%; object-fit: contain;}
-.img-khaadi2 {
-  position: absolute;
-  left: 1020px; top: 0; /* set left/top if needed */
-  width: 483px; height: 929px; z-index: 8;
-}
-.img-khaadi2 img { width:100%; height:100%; object-fit: contain;}
-/* Title/text block */
-.title-modern {
-  position: absolute;
-  left: 315px;
-  top: 115px;
-  width: 1455px;
-  height: 68px;
-  color: #49001B;
-  font-family: 'GT Alpina Trial', serif;
-  font-size: 30px;
-  font-weight: 700;
-  text-align: center;
-  line-height: 34px;
-  z-index: 25;
+  left: 600px;
+  top: 210px;
+  font-size: 165px;
+  font-family: serif;
+  color: #f9f9ed;
+  opacity: 0.29;
+  pointer-events:none;
+  z-index: 12;
 }
 </style>
 </head>
 <body>
-<div class="bg-main"></div>
 <div class="vertical-nav">
   <a href="index.html"><div class="circle c1"></div></a>
   <a href="Page02.html"><div class="circle c2"></div></a>
@@ -179,22 +133,29 @@ body, html {
 <div class="num n3">3</div>
 <div class="num n4">4</div>
 <div class="num n5">5</div>
-<div class="num n6">7</div>
-<div class="num n7">10</div>
+<div class="num n6">6</div>
+<div class="num n7">7</div>
 <div class="num n8">8</div>
 <div class="num n9">9</div>
 <div class="num n10">10</div>
 <div class="line-2"></div>
-<div class="icon-embroidery"><img src="./images/embroidary-removebg-preview.png" alt="Embroidery icon" /></div>
-<div class="img-embroidery4"><img src="./images/embroidary4-removebg-preview.png" alt="Embroidery 4" /></div>
-<div class="img-embroidery"><img src="./images/embroidary-removebg-preview.png" alt="Embroidery" /></div>
-<div class="img-zardozi"><img src="./images/zardozi2-removebg-preview (1).png" alt="Zardozi" /></div>
-<!--
-<div class="img-khaadi1"><img src="./images/khaadi1-removebg-preview.png" alt="Khaadi 1" /></div>
-<div class="img-khaadi2"><img src="./images/khaadi2-removebg-preview.png" alt="Khaadi 2" /></div>
--->
-<div class="title-modern">
-  Modern trends: What people are wearing today while drawing inspiration from block print, ajrak, zardozi and other traditional outfits.
+<div class="content-main">
+  <p>Music has long been a part of Pakistani culture, and the country was greatly influenced by the northern Indian tradition of Hindustani music.</p>
+
+  <h2>Traditional and Local Styles</h2>
+  <p>
+    The <a href="https://www.britannica.com/topic/ghazal">ghazal</a>, a type of romantic poem, is often put to music. <a href="https://www.britannica.com/topic/ghazal">Ghazal</a> singers such as Mehdi Hassan and Ghulam Ali have developed a broad following at home and abroad. <a href="https://www.britannica.com/art/qawwali">Qawwali</a>, a form of devotional singing associated with <a href="https://www.britannica.com/topic/Sufism">Sufism</a>, is also widely practiced and has influenced a number of popular styles. One of its greatest adherents, <a href="https://www.britannica.com/biography/Nusrat-Fateh-Ali-Khan">Nusrat Fateh Ali Khan</a>, became famous in Pakistan and the broader world. Traditional instruments include the <a href="https://www.britannica.com/art/sitar">sitar</a>, <a href="https://www.britannica.com/art/rabab">rabab</a> (a fiddlelike stringed instrument), and dhol (bass drum).
+  </p>
+  <h2>Western Influences</h2>
+  <p>
+    Western-style <a href="https://www.britannica.com/art/popular-music">popular music</a> has been slow to develop in Pakistan, although by the early 21st century there were a number of singers, both men and women, who were considered to be pop stars. Among these were the sibling duo Nazia Hassan and Zoheb Hassan, the crooner Alamgir, and the rock bands Vital Signs and Junoon, a group whose music was inspired by Sufism.
+  </p>
 </div>
+<!-- Sample Urdu overlay -->
+<div class="urduoverlay">[translate:نَس]</div>
+<!-- Art/album/people images (customize src/positions as needed) -->
+<img src="./images/musicgirl.png" alt="Traditional Singer" class="musicimg" />
+<img src="./images/nfak-album.png" alt="Nusrat Album" class="nfakimg" />
+<img src="./images/popduo.png" alt="Pop Band" class="albumimg" />
 </body>
 </html>
