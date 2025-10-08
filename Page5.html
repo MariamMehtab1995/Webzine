@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, initial-scale=1" />
+<title>Page 5</title>
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  background: #C27100;
+}
+
+/* Color stripes background */
+.bg-stripe-1 { position: absolute; left: 0px; top: -1px; width: 604px; height: 1201px; background: #8D3737; z-index: 1; }
+.bg-stripe-2 { position: absolute; left: 564px; top: 0px; width: 458px; height: 1200px; background: #4A4553; z-index: 1; }
+.bg-stripe-3 { position: absolute; left: 1020px; top: -1px; width: 478px; height: 1201px; background: #553536; z-index: 1; }
+.bg-stripe-4 { position: absolute; left: 1498px; top: 0px; width: 422px; height: 1200px; background: #7F3D23; z-index: 1; }
+.bg-main { position: absolute; left: 6px; top: -1px; width: 1920px; height: 1200px; background: #C27100; z-index: 0; }
+
+/* Vertical nav bar circles */
+.vertical-nav {
+  position: absolute;
+  left: 96px;
+  top: 112px;
+  width: 120px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.circle {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  margin-bottom: 92px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+  text-decoration: none;
+}
+.circle.c1 { background: #782566; }
+.circle.c2 { background: #DC176C; }
+.circle.c3 { background: #C26700; }
+.circle.c4 { background: #B57A21; }
+.circle.c5 { background: #35582E; }
+.circle.c6 { background: #1D4330; }
+.circle.c7 { background: #392B50; }
+.circle.c8 { background: #5C164E; }
+.circle.c9 { background: #5C2A16; }
+.circle.c10 { background: #5C164E; }
+.circle:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 92px;
+  background: rgba(255,255,255,0.22);
+  z-index: 0;
+}
+.circle span { color: rgba(255,255,255,0.75); }
+
+.num {
+  position: absolute;
+  width: 16px;
+  height: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(255,255,255,0.68);
+}
+/* Position for each nav number next to circle */
+.num.n1 { left: 109px; top: 120px;}
+.num.n2 { left: 109px; top: 230px;}
+.num.n3 { left: 108px; top: 348px;}
+.num.n4 { left: 108px; top: 454px;}
+.num.n5 { left: 108px; top: 662px;}
+.num.n6 { left: 110px; top: 762px;}
+.num.n7 { left: 103px; top: 1062px; width: 24px; }
+.num.n8 { left: 107px; top: 862px;}
+.num.n9 { left: 109px; top: 961px;}
+.num.n10 { left: 103px; top: 1062px; width: 24px;}
+.icon-marwari { position: absolute; left: 67px; top: 534px; width: 101px; height: 71px; z-index: 10; }
+.icon-marwari img { width: 100%; height: 100%; object-fit: contain; }
+
+/* Divider line */
+.line-2 {
+  position: absolute;
+  left: 114px;
+  top: 142px;
+  width: 4px;
+  height: 931px;
+  background: rgba(255,255,255,0.27);
+  opacity: 0.5;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+/* Region Images */
+.img-baloch { position: absolute; left: 213px; top: 440px; width: 373px; height: 668px; z-index: 5;}
+.img-baloch img { width: 100%; height: 100%; object-fit: contain;}
+.img-hazara { position: absolute; left: 655px; top: 416px; width: 322px; height: 691px; z-index: 5;}
+.img-hazara img { width: 100%; height: 100%; object-fit: contain;}
+.img-sindhi { position: absolute; left: 1076px; top: 422px; width: 367px; height: 679px; z-index: 5;}
+.img-sindhi img { width: 100%; height: 100%; object-fit: contain;}
+.img-marwari { position: absolute; left: 1553px; top: 419px; width: 287px; height: 694px; z-index: 5;}
+.img-marwari img { width: 100%; height: 100%; object-fit: contain;}
+
+.title {
+  position: absolute;
+  left: 359px;
+  top: 157px;
+  width: 1455px;
+  height: 92px;
+  color: #fff;
+  font-family: 'GT Alpina Trial', serif;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 500;
+  text-decoration: underline;
+  z-index: 20;
+}
+
+.txt-gilgit {
+  position: absolute;
+  left: 239px;
+  top: 258px;
+  width: 312px;
+  color: #fff;
+  font-family: 'GT Alpina Trial', serif;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 500;
+  z-index: 15;
+}
+.txt-kpk {
+  position: absolute;
+  left: 614px;
+  top: 268px;
+  width: 397px;
+  color: #fff;
+  font-family: 'GT Alpina Trial', serif;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 500;
+  z-index: 15;
+}
+.txt-sindh {
+  position: absolute;
+  left: 1055px;
+  top: 261px;
+  width: 410px;
+  color: #fff;
+  font-family: 'GT Alpina Trial', serif;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 500;
+  z-index: 15;
+}
+.txt-punjab {
+  position: absolute;
+  left: 1539px;
+  top: 274px;  /* Reasonable: not specified, adjust as needed */
+  width: 382px;
+  height: 46px;
+  color: #fff;
+  font-family: 'GT Alpina Trial', serif;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 500;
+  z-index: 15;
+}
+
+</style>
+</head>
+<body>
+<div class="bg-main"></div>
+<div class="bg-stripe-1"></div>
+<div class="bg-stripe-2"></div>
+<div class="bg-stripe-3"></div>
+<div class="bg-stripe-4"></div>
+<!-- Nav Circles -->
+<div class="vertical-nav">
+  <a href="index.html"><div class="circle c1"></div></a>
+  <a href="Page02.html"><div class="circle c2"></div></a>
+  <a href="Page03.html"><div class="circle c3"></div></a>
+  <a href="Page04.html"><div class="circle c4"></div></a>
+  <a href="Page05.html"><div class="circle c5"></div></a>
+  <a href="Page06.html"><div class="circle c6"></div></a>
+  <a href="Page07.html"><div class="circle c7"></div></a>
+  <a href="Page08.html"><div class="circle c8"></div></a>
+  <a href="Page09.html"><div class="circle c9"></div></a>
+  <a href="Page10.html"><div class="circle c10"></div></a>
+</div>
+<!-- Nav Numbers -->
+<div class="num n1">1</div>
+<div class="num n2">2</div>
+<div class="icon-marwari"><img src="./images/Marwari-removebg-preview.png" alt="Marwari icon" /></div>
+<div class="num n3">3</div>
+<div class="num n4">4</div>
+<div class="num n5">6</div>
+<div class="num n6">7</div>
+<div class="num n7">10</div>
+<div class="num n8">8</div>
+<div class="num n9">9</div>
+<div class="num n10">10</div>
+<div class="line-2"></div>
+<!-- Costume Images -->
+<div class="img-baloch"><img src="./images/Baloch-removebg-preview.png" alt="Baloch Costume" /></div>
+<div class="img-hazara"><img src="./images/hazara-removebg-preview.png" alt="Hazara Costume" /></div>
+<div class="img-sindhi"><img src="./images/southernsindhi-removebg-preview.png" alt="Sindhi Costume" /></div>
+<div class="img-marwari"><img src="./images/Marwari-removebg-preview.png" alt="Marwari Costume" /></div>
+<!-- Texts -->
+<div class="title">
+  Traditional Pakistani Clothing varies widely across regions, showcasing local culture, climate, and traditions, with unique styles, fabrics, and decorations.
+</div>
+<div class="txt-gilgit">
+  Gilgit-Baltistan: Pakistani Costumes showcase vibrant colors and unique patterns, with women in long skirts and men in woolen jackets to suit the colder climate.
+</div>
+<div class="txt-kpk">
+  Khyber Pakhtunkhwa: The Pashtun shalwar kameez is common, accompanied by embroidered topis for men, while women favor colorful dresses with jewelry.
+</div>
+<div class="txt-sindh">
+  Sindh: Sindhi women sport bright ghagra and choli, embellished with mirror work and embroidery. Men wear sherwani along with the traditional Ajrak shawl.
+</div>
+<div class="txt-punjab">
+  Punjab: Women typically wear shalwar kameez adorned with phulkari embroidery, while men opt for kurta and shalwar, often paired with colorful turbans.
+</div>
+</body>
+</html>
