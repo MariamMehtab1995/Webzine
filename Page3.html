@@ -1,1 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, initial-scale=1" />
+  <title>Page3</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background: #90295C;
+    }
+    .container {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      overflow: hidden;
+      background: #90295C;
+    }
+    /* --- Circles Vertical Nav --- */
+    .vertical-nav {
+      position: absolute;
+      left: 92px; /* matches Figma assets */
+      top: 133px; /* aligns first circle */
+      width: 120px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 62px; /* spacing matches: top:133 > top:375 = 242 / 4 ~60px */
+    }
+    .circle {
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      position: relative;
+      opacity: 1;
+    }
+    .circle.c1 { background: #782566; color: #fff; }
+    .circle.c2 { background: #B53211; }
+    .circle.c3 { background: #C26700; }
+    .circle.c4 { background: #B57A21; }
+    .circle.c5 { background: #35582E; }
+    .circle.c6 { background: #1D4330; }
+    .circle.c7 { background: #392B50; }
+    .circle.c8 { background: #5C164E; }
+    .circle.c9 { background: #5C2A16; }
+    .circle.c10 { background: #5C164E; }
+    .circle:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      width: 5px;
+      height: 60px;
+      background: rgba(255,255,255,0.28);
+      z-index: 0;
+    }
+    /* Circle Numbers */
+    .circle span {
+      color: rgba(255,255,255,0.75);
+      font-size: 20px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+    }
+    /* --- Main Elements --- */
+    .sticky-yellow {
+      position: absolute;
+      left: 152px;
+      top: -15px;
+      width: 783px;
+      height: 522px;
+      transform: rotate(1.59deg);
+      z-index: 1;
+    }
+    .sticky-blue {
+      position: absolute;
+      left: 881px;
+      top: 707px;
+      width: 618px;
+      height: 412px;
+      z-index: 2;
+    }
+    .sticky-pink {
+      position: absolute;
+      left: 1078px;
+      top: 175px;
+      width: 706px;
+      height: 470px;
+      transform: rotate(-26.7deg);
+      z-index: 3;
+    }
+    .pakistan-map-big {
+      position: absolute;
+      left: 262px;
+      top: -204px;
+      width: 1167px;
+      height: 1555px;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+    .pakistan-map-small {
+      position: absolute;
+      left: 49px;
+      top: 168px;
+      width: 133px;
+      height: 177px;
+      z-index: 5;
+      pointer-events: none;
+    }
+    /* --- Text on Stickies --- */
+
+    .truckart-text {
+      position: absolute;
+      left: 405px;
+      top: 130px;
+      width: 275px;
+      height: 227px;
+      transform: rotate(3.43deg);
+      z-index: 12;
+      color: #fff;
+      font-family: 'GT Alpina Trial', serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 27px;
+      pointer-events: none;
+    }
+    .clothingart-text {
+      position: absolute;
+      left: 1323px;
+      top: 364px;
+      width: 285px;
+      height: 214px;
+      color: #fff;
+      transform: rotate(-26.76deg);
+      z-index: 15;
+      font-family: 'GT Alpina Trial', serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      pointer-events: none;
+    }
+    .musicart-text {
+      position: absolute;
+      left: 1065px;
+      top: 820px;
+      width: 269px;
+      height: 136px;
+      color: #fff;
+      transform: none;
+      z-index: 15;
+      font-family: 'GT Alpina Trial', serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      pointer-events: none;
+    }
+    /* Decorative vertical line (Line 2) */
+    .vert-line {
+      position: absolute;
+      left: 130px;
+      top: 163px;
+      width: 0;
+      height: 931px;
+      border-left: 4px solid rgba(255,255,255,0.27);
+      opacity: 0.5;
+      z-index: 2;
+    }
+    /* Responsive basic tweak below */
+    @media (max-width: 1400px) {
+      .sticky-yellow, .sticky-blue, .sticky-pink { width: 35vw; }
+      .pakistan-map-big { width: 55vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Vert Navigation -->
+    <div class="vertical-nav">
+      <a href="index.html"><div class="circle c1"><span>1</span></div></a>
+      <a href="Page02.html"><div class="circle c2"><span>2</span></div></a>
+      <a href="Page03.html"><div class="circle c3"><span>3</span></div></a>
+      <a href="Page04.html"><div class="circle c4"><span>4</span></div></a>
+      <a href="Page05.html"><div class="circle c5"><span>5</span></div></a>
+      <a href="Page06.html"><div class="circle c6"><span>6</span></div></a>
+      <a href="Page07.html"><div class="circle c7"><span>7</span></div></a>
+      <a href="Page08.html"><div class="circle c8"><span>8</span></div></a>
+      <a href="Page09.html"><div class="circle c9"><span>9</span></div></a>
+      <a href="Page10.html"><div class="circle c10"><span>10</span></div></a>
+    </div>
+
+    <!-- Line behind circles -->
+    <div class="vert-line"></div>
+
+    <!-- Assets and Decorations -->
+    <img src="./images/vecteezy_sticky-note-paper-transparent_22299310.png" alt="Sticky Note Yellow" class="sticky-yellow"/>
+    <img src="./images/pakistanmap1-removebg-preview.png" alt="Pakistan Map Main" class="pakistan-map-big"/>
+    <img src="./images/pakistanmap1-removebg-preview.png" alt="Pakistan Map Mini" class="pakistan-map-small"/>
+    <img src="./images/vecteezy_sticky-note-paper-transparent_22299327.png" alt="Sticky Note Pink" class="sticky-pink"/>
+    <img src="./images/bluestickynote.png" alt="Sticky Note Blue" class="sticky-blue"/>
+
+    <!-- Texts -->
+    <div class="truckart-text">
+      Truck art isn’t just decoration. It carries the weight of Pakistan’s plural identity and turns the road into a painting gallery. Pakistan holds many cultures, and that mix shows up on every panel: handmade work, rich with folktales, blessings, and patterned borders. These rolling canvases help people communicate across regions: a driver’s roots, beliefs, and tastes are visible at a glance.
+    </div>
+    <div class="clothingart-text">
+      Clothing in Pakistan is a story stitched by hand. Zardozi, ajrak, and phulkari carry centuries of tradition, weaving culture, identity, and heritage into every thread. Patterns tell tales of regions, beliefs, and family histories, while colors speak louder than words. Each piece transforms the wearer into a walking canvas, connecting past and present with elegance and pride.
+    </div>
+    <div class="musicart-text">
+      From the soulful qawwalis of shrines to folk songs by village fires, from classical ragas to rap battles in the streets, every note carries culture, emotion, and memory. Music connects people across regions, preserving traditions while embracing change, turning sound into a canvas that speaks louder than words.
+    </div>
+  </div>
+</body>
+</html>
 
