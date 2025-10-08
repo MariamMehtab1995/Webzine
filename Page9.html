@@ -1,0 +1,149 @@
+/* Background */
+#background {
+  position: absolute;
+  width: 1920px;
+  height: 1186px;
+  left: 2px;
+  top: 0px;
+  background: #BA6C71;
+}
+
+/* Numbered circles for sidebar */
+.circle {
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  left: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(255,255,255,0.68);
+}
+#circle-1 { top: 140px; background: #782566; }
+#circle-2 { top: 250px; background: #DC176C; }
+#circle-3 { top: 368px; background: #B53211; }
+#circle-4 { top: 482px; background: #C26700; }
+#circle-5 { top: 581px; background: #B57A21; }
+#circle-6 { top: 681px; background: #35582E; }
+#circle-7 { top: 781px; background: #1D4330; }
+#circle-8 { top: 881px; background: #392B50; }
+#circle-9 { top: 981px; background: #5C2A16; }
+#circle-10 { top: 1081px; background: #5C164E; }
+.circle span {
+  position: absolute;
+  left: 13px;
+  top: 8px;
+}
+
+/* Sidebar numbers styling (position per asset) */
+.num {
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255,255,255,0.68);
+}
+/* Adjust left/top for each .num per asset */
+#num-1 { left: 94px; top: 148px; width: 10px; }
+#num-2 { left: 94px; top: 258px; width: 13px;}
+#num-3 { left: 93px; top: 376px; width: 14px;}
+#num-4 { left: 93px; top: 490px; width: 14px;}
+#num-5 { left: 93px; top: 589px; width: 13px;}
+#num-6 { left: 93px; top: 690px; width: 14px;}
+#num-7 { left: 95px; top: 790px; width: 12px;}
+#num-8 { left: 92px; top: 890px; width: 14px;}
+#num-9 { left: 94px; top: 989px; width: 14px;}
+#num-10 { left: 88px; top: 1090px; width: 24px;}
+
+/* Main images */
+#misbahandi-img {
+  position: absolute;
+  width: 552px;
+  height: 414px;
+  left: 280px;
+  top: 140px;
+  background: url('misbahandi.jpg');
+  background-size: cover;
+  border: 2px solid #457AFF;
+}
+#magnet-img {
+  position: absolute;
+  width: 220px;
+  height: 426px;
+  left: 986px;
+  top: 139px;
+  background: url('magnet.jpg');
+  background-size: cover;
+  border: 2px solid #AD4637;
+}
+#hina-img {
+  position: absolute;
+  width: 492px;
+  height: 656px;
+  left: 1350px;
+  top: 125px;
+  background: url('hina.jpg');
+  background-size: cover;
+  border: 2px solid #E88813;
+}
+#truckartme-img {
+  position: absolute;
+  width: 930px;
+  height: 467px;
+  left: 275px;
+  top: 676px;
+  background: url('truckartme.jpg');
+  background-size: cover;
+  border: 2px solid #E88813;
+}
+
+/* Image captions */
+.caption {
+  font-family: 'GT Alpina Trial', serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #FFFFFF;
+  position: absolute;
+}
+#caption-misbahandi { width: 567px; height: 59px; left: 293px; top: 570px; }
+#caption-magnet { width: 222px; height: 41px; left: 999px; top: 572px; }
+#caption-hina { width: 474px; height: 128px; left: 1368px; top: 804px; }
+#caption-truckartme { width: 486px; height: 57px; left: 1262px; top: 1086px; }
+
+/* Decorative/invisible rectangles for focus areas */
+.invisible-rect {
+  position: absolute;
+  width: 86px;
+  height: 92px;
+  background: #D9D9D9;
+  opacity: 0;
+}
+/* Repeat .invisible-rect for each area (see Figma assets for top/left values) */
+
+/* Connecting lines */
+.line-v {
+  position: absolute;
+  opacity: 0.5;
+  border: 4px solid rgba(255,255,255,0.27);
+  transform: rotate(90deg);
+}
+#line-2 { width: 931px; left: 99px; top: 170px; } 
+
+.line-h {
+  position: absolute;
+  border: 1px solid #B5A0A0;
+}
+#line4-hina { width: 492px; left: 1350px; top: 853px; }
+#line5-hina { width: 55px; left: 1351px; top: 797px; transform: rotate(-90deg);}
+#line4-misbahandi { width: 552px; left: 280px; top: 617px;}
+#line5-misbahandi { width: 55px; left: 280px; top: 561px; transform: rotate(-90deg);}
+#line7-truckartme { width: 492px; left: 1243px; top: 1139px;}
+#line6-truckartme { width: 55px; left: 1243px; top: 1084px; transform: rotate(-90deg);}
+#line7-magnet { width: 240px; left: 988px; top: 617px;}
+#line6-magnet { width: 46px; left: 988px; top: 572px; transform: rotate(-90deg);}
