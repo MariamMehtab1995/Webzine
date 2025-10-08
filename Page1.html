@@ -111,14 +111,16 @@ body, html {
   text-align: right;
 }
 .image-block {
-  position: static;
-  display: flex; justify-content: center;
-  left: 85%;
-  top: 36vh;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
   width: 44vw;
   max-width: 860px;
   min-width: 260px;
   z-index: 5;
+  display: flex;
+  justify-content: center;
 }
 .image-block img {
   width: 100%;
