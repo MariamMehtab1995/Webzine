@@ -1,21 +1,126 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>TheEndgame - Tactics</title>
+  <title>Page 1</title>
+  <style>
+    body {
+      margin: 0; padding: 0;
+      height: 100vh; width: 100vw;
+      font-family: 'GTAlpinaBold', serif;
+      box-sizing: border-box;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 35% 65%;
+      height: 100vh;
+    }
+    .left {
+      background: #792c82;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      padding-left: 60px;
+    }
+    .nav {
+      position: absolute;
+      left: 10px;
+      top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .nav a {
+      text-decoration: none;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: #e9488d;
+      color: #fff;
+      text-align: center;
+      line-height: 32px;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 5px;
+      transition: background 0.2s;
+      border: 2px solid transparent;
+    }
+    .nav a.active {
+      background: #ad37a8; /* highlight current page */
+      border-color: #fff;
+    }
+    .left-text {
+      margin-top: 40px;
+      margin-left: 40px;
+      margin-bottom: 20px;
+      max-width: 75%;
+      font-size: 21px;
+      line-height: 1.4;
+    }
+    .right {
+      background: #4994a6;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 60px;
+      padding-right: 40px;
+    }
+    .right-text {
+      font-size: 20px;
+      max-width: 90%;
+      margin-top: 70px;
+      line-height: 1.42;
+    }
+    .image-row {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      width: 38vw;
+      text-align: center;
+    }
+    .group-image {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      border-radius: 16px;
+    }
+  </style>
 </head>
 <body>
-    <h1>The Power of Chess Tactics</h1>
-    <p>Chess tactics are short-term moves that create immediate advantages.</p>
-    <p>Some essential tactics include:</p>
-    <ul>
-        <li><b>Fork:</b> One piece attacks two or more enemy pieces at once.</li>
-        <li><b>Pin:</b> Attacking a piece so moving it would expose a more valuable piece behind it.</li>
-        <li><b>Skewer:</b> Like a pin but attacking the more valuable piece first.</li>
-        <li><b>Discovered Attack:</b> Moving one piece reveals an attack from another piece.</li>
-    </ul>
-    <p>Try spotting these tactics in your games! They can turn the tide instantly.</p>
-    <p><a href="Page03.html">Next: Iconic Matches That Changed Chess</a></p>
-    <p><a href="index.html">Back to Home</a></p>
+  <div class="layout">
+    <div class="left">
+      <div class="nav">
+        <a class="active" href="page1.html">1</a>
+        <a href="page2.html">2</a>
+        <a href="page3.html">3</a>
+        <a href="page4.html">4</a>
+        <a href="page5.html">5</a>
+        <a href="page6.html">6</a>
+        <a href="page7.html">7</a>
+        <a href="page8.html">8</a>
+        <a href="page9.html">9</a>
+        <a href="page10.html">10</a>
+      </div>
+      <div class="left-text">
+        I wanted to show the culture I have seen and present it through my eyes...<br><br>
+        Whether it is the means of transport, fashion, music or poetry, everything is full of expressions which I want to show in this zine...
+      </div>
+    </div>
+    <div class="right">
+      <div class="right-text">
+        In Pakistan, art isn't hung on walls—it is worn, driven,<br>
+        and sung with a passion that saturates the very air. It's<br>
+        a culture where creativity is a public spectacle, a personal identity, and a spiritual release, all at once.<br><br>
+        Here, art bursts out of closets, rides in rickshaws, and hums through city streets—always bold, always in motion.
+      </div>
+    </div>
+    <div class="image-row">
+      <img src="images/groupimage.png" alt="Group" class="group-image">
+    </div>
+  </div>
 </body>
 </html>
